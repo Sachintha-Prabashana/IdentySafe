@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/identysafe_db
+    username: root
+    password: Sachintha@2003
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://api.asgardeo.io/t/sporg/oauth2/token
+          jwk-set-uri: https://api.asgardeo.io/t/sporg/oauth2/jwks
