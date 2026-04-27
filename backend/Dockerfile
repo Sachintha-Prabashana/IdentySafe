@@ -11,4 +11,8 @@ FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
+
+# Add new user for run spring boot application for security reasons
+RUN addgroup --system spring && adduser --system spring --ingroup spring
+USER spring:spring
 ENTRYPOINT ["java", "-jar", "app.jar"]
