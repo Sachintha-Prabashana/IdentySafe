@@ -13,6 +13,7 @@ COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 
 # Add new user for run spring boot application for security reasons
-RUN addgroup --system spring && adduser --system spring --ingroup spring
-USER spring:spring
+RUN addgroup --gid 10001 spring && \
+    adduser --uid 10001 --gid 10001 --disabled-password --gecos "" spring
+USER 10001
 ENTRYPOINT ["java", "-jar", "app.jar"]
