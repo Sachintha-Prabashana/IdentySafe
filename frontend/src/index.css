@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+@theme {
+  --color-evernote-green: #008f26;
+  --color-evernote-green-hover: #00731f;
+  --color-evernote-beige: #f4eee5;
+  --color-evernote-charcoal: #141414;
+  --color-evernote-gray: #f0f0f0;
+  --color-evernote-gray-dark: #737373;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-evernote-beige text-evernote-charcoal;
+  }
+}
+
+@layer utilities {
+  .btn-pill {
+    @apply rounded-full px-8 py-3 font-bold transition-all duration-200 active:scale-95;
+  }
+
+  .card-evernote {
+    @apply bg-white rounded-2xl border border-gray-100;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+}
+
+/* Base typography refinements */
+h1, h2, h3, h4 {
+  @apply font-bold tracking-tight text-evernote-charcoal;
+}

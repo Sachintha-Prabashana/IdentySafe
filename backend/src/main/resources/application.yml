@@ -10,10 +10,14 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: https://api.asgardeo.io/t/sporg/oauth2/token
           jwk-set-uri: https://api.asgardeo.io/t/sporg/oauth2/jwks
+
+cloudinary:
+  cloud-name: dcblrfg9m
+  api-key: 871257782914546
+  api-secret: aqx4DqGBtWbXY2YUdilmTrvCP6s
