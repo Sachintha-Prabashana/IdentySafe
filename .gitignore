@@ -13,3 +13,5 @@ backend/*.iml
 # System Files
 .DS_Store
 Thumbs.db
+
+.env
